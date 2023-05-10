@@ -1,0 +1,27 @@
+#spring:
+#  datasource:
+#        driver-class-name: com.mysql.cj.jdbc.Driver
+#        url: jdbc:mysql://127.0.0.1:3306/testDB2?serverTimezone=UTC&characterEncoding=UTF-8
+#        username: root
+#        password: Ss05280528*
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#      format_sql: true
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.MySQL57Dialect
+
+spring:
+  datasource:
+    url: jdbc:mariadb://svc.sel4.cloudtype.app:32022/testDB
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: s05280528*
+  jpa:
+    open-in-view: false
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
