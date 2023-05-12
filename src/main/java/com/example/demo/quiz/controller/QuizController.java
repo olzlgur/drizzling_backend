@@ -3,6 +3,8 @@ package com.example.demo.quiz.controller;
 import com.example.demo.global.response.CommonResponse;
 import com.example.demo.global.response.ResponseService;
 import com.example.demo.quiz.dto.CheckAnswerRequestDto;
+import com.example.demo.quiz.dto.QuizAnswerResponseDto;
+import com.example.demo.quiz.dto.QuizResponseDto;
 import com.example.demo.quiz.service.QuizService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -16,13 +18,15 @@ public class QuizController {
     private final QuizService quizService;
 
     @GetMapping("/get/{category}")
-    public CommonResponse<Object> getQuiz(@PathVariable("category") String category) {
-        return responseService.getSuccessResponse("문제 반환 성공", quizService.getQuiz(category));
+    public QuizResponseDto getQuiz(@PathVariable("category") String category) {
+        return quizService.getQuiz(category);
     }
 
     @PostMapping("/check")
-    public CommonResponse<Object> checkAnswer(@RequestBody CheckAnswerRequestDto checkAnswerRequestDto) {
-        return responseService.getSuccessResponse("채점 완료", quizService.checkQuizAnswer(checkAnswerRequestDto));
+    public QuizAnswerResponseDto checkAnswer(@RequestBody CheckAnswerRequestDto checkAnswerRequestDto) {
+        QuizAnswerResponseDto quizResponseDto = new QuizAnswerResponseDto();
+        quizResponseDto.setAnswer(quizService.checkQuizAnswer(checkAnswerRequestDto));
+        return quizResponseDto;
     }
 
     @DeleteMapping("/resetDate")
