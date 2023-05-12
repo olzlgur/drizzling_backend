@@ -15,14 +15,10 @@
 
 spring:
   datasource:
-#    url: jdbc:mariadb://${drizzling_mariaDB_HOST}:${drizzling_mariaDB_PORT}/${drizzling_mariaDB_Name}
-#    driver-class-name: org.mariadb.jdbc.Driver
-#    username: ${drizzling_mariaDB_USER_NAME}
-#    password: ${drizzling_mariaDB_PASSWORD}
-    url: jdbc:mariadb://svc.sel4.cloudtype.app:32022/testDB
+    url: jdbc:mariadb://${drizzling_mariaDB_HOST}:${drizzling_mariaDB_PORT}/${drizzling_mariaDB_Name}
     driver-class-name: org.mariadb.jdbc.Driver
-    username: root
-    password: s05280528*
+    username: ${drizzling_mariaDB_USER_NAME}
+    password: ${drizzling_mariaDB_PASSWORD}
   jpa:
     open-in-view: false
     generate-ddl: true
