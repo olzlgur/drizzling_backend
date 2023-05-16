@@ -20,10 +20,10 @@ public class QuizService {
     @Transactional
     public QuizResponseDto getQuiz(String category) {
         LocalDate time = LocalDate.now();
-        Optional<Quiz> oQuiz = quizRepository.findByDateAndCategory(time, category);
+        Optional<Quiz> optionalQuiz = quizRepository.findByDateAndCategory(time, category);
 
-        if (oQuiz.isPresent()) {
-            return QuizResponseDto.register(oQuiz.get());
+        if (optionalQuiz.isPresent()) {
+            return QuizResponseDto.register(optionalQuiz.get());
         }
 
         Quiz quiz = quizRepository.getQuiz(category);

@@ -30,9 +30,9 @@ public class QuizController {
     }
 
     @DeleteMapping("/resetDate")
-    public CommonResponse<Object> resetDate() {
+    public void resetDate() {
         quizService.deleteAllDate();
-        return responseService.getSuccessResponse("날짜 리셋", null);
+        return ;
     }
 
 }
