@@ -17,7 +17,7 @@ public class QuizRepository {
     private final EntityManager em;
 
     public Quiz getQuiz(String category) {
-        String sql = "select * from quiz where date = null and category = :category order by rand() limit 1";
+        String sql = "select * from quiz where date is null and category = :category order by rand() limit 1";
         Query query = em.createNativeQuery(sql, Quiz.class)
                 .setParameter("category", category);
         Quiz quiz = (Quiz) query.getSingleResult();
