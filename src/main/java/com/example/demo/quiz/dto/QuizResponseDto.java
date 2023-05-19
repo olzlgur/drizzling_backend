@@ -21,16 +21,16 @@ public class QuizResponseDto {
     private String quiz;
 
     @NotNull
-    private String seletion1;
+    private String selection1;
 
     @NotNull
-    private String seletion2;
+    private String selection2;
 
     @NotNull
-    private String seletion3;
+    private String selection3;
 
     @NotNull
-    private String seletion4;
+    private String selection4;
 
     @Builder
     public static QuizResponseDto register(Quiz quiz){
@@ -39,10 +39,10 @@ public class QuizResponseDto {
         quizResponseDto.setId(quiz.getId());
         quizResponseDto.setTitle(quiz.getTitle());
         quizResponseDto.setContent(quiz.getContent());
-        quizResponseDto.setSeletion1(quiz.getSeletion1());
-        quizResponseDto.setSeletion2(quiz.getSeletion2());
-        quizResponseDto.setSeletion3(quiz.getSeletion3());
-        quizResponseDto.setSeletion4(quiz.getSeletion4());
+        quizResponseDto.setSelection1(quiz.getSeletion1());
+        quizResponseDto.setSelection2(quiz.getSeletion2());
+        quizResponseDto.setSelection3(quiz.getSeletion3());
+        quizResponseDto.setSelection4(quiz.getSeletion4());
 
         return quizResponseDto;
     }
