@@ -32,6 +32,9 @@ public class QuizResponseDto {
     @NotNull
     private String selection4;
 
+    @NotNull
+    private int answer;
+
     @Builder
     public static QuizResponseDto register(Quiz quiz){
         QuizResponseDto quizResponseDto = new QuizResponseDto();
@@ -43,6 +46,7 @@ public class QuizResponseDto {
         quizResponseDto.setSelection2(quiz.getSeletion2());
         quizResponseDto.setSelection3(quiz.getSeletion3());
         quizResponseDto.setSelection4(quiz.getSeletion4());
+        quizResponseDto.setAnswer(quiz.getAnswer());
 
         return quizResponseDto;
     }
